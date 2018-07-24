@@ -132,6 +132,11 @@ $ sudo chmod 644 .ssh/authorized_keys
 ```
 
 - You can now update the PuTTY login to grader@18.220.250.224 on port 2200 with the same .ppk key.
+- To use a terminal you will need to run ssh-keygen on your local machine to create a private and public key pair. Use the public key (.pub file) to load into the .ssh/authorized_keys of the grader user, and use the private key with this command.
+
+```
+$ ssh -i <PRIVATE_KEY_FILE> grader@18.220.250.224 -p 2200
+```
 
 ### 8 - Install Apache, Git, Pip, and Python libraries
 
@@ -306,6 +311,7 @@ $ sudo service apache2 restart
 
 ### Resources
 
+- Udacity Linux Server Lessons
 - https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps
 - http://flask.pocoo.org/docs/1.0/deploying/mod_wsgi/
 - https://www.postgresql.org/docs/current/static/runtime-config-client.html
